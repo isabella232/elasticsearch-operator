@@ -24,7 +24,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 
 package spec
 
-import "github.com/upmc-enterprises/elasticsearch-operator/pkg/snapshot"
+import "github.com/namely/elasticsearch-operator/pkg/snapshot"
 
 // ElasticSearchCluster defines the cluster
 type ElasticSearchCluster struct {
