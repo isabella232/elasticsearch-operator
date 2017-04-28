@@ -64,7 +64,7 @@ func (s *Scheduler) Run() {
 	if s.enabled {
 		logrus.Info("-----> Init scheduler")
 
-		logrus.Infof("Cron is set to %s", s.cronSchedule)
+		logrus.Infof("NOW Cron is set to %s", s.cronSchedule)
 		s.cron.AddFunc(s.cronSchedule, func() {
 			s.CreateSnapshotRepository()
 			s.CreateSnapshot()
