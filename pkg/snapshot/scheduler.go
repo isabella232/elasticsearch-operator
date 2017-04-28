@@ -82,7 +82,7 @@ func (s *Scheduler) CreateSnapshotRepository() {
 	}
 	client := &http.Client{Transport: tr}
 	body := fmt.Sprintf("{ \"type\": \"s3\", \"settings\": { \"bucket\": \"%s\" } }", s.s3bucketName)
-	url := fmt.Sprintf("%s_snapshot/%s", elasticURL, s.s3bucketName)
+	url := fmt.Sprintf("%s/snapshot/%s", elasticURL, s.s3bucketName)
 	logrus.Info("!!! URL is: %s !!!", url)
 	req, err := http.NewRequest("PUT", url, strings.NewReader(body))
 	resp, err := client.Do(req)
@@ -99,6 +99,7 @@ func (s *Scheduler) CreateSnapshotRepository() {
 		return
 	}
 
+	logrus.Infof("WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 	logrus.Infof("Created snapshot repository!")
 
 	return
@@ -112,7 +113,7 @@ func (s *Scheduler) CreateSnapshot() {
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 	client := &http.Client{Transport: tr}
-	url := fmt.Sprintf("%s_snapshot/%s/snapshot_%s", elasticURL, s.s3bucketName, fmt.Sprintf(time.Now().Format("2006-01-02-15-04-05")))
+	url := fmt.Sprintf("%s/snapshot/%s/snapshot_%s", elasticURL, s.s3bucketName, fmt.Sprintf(time.Now().Format("2006-01-02-15-04-05")))
 
 	req, err := http.NewRequest("PUT", url, nil)
 	if err != nil {
