@@ -38,7 +38,7 @@ import (
 var (
 	// TODO: Right now defaulting to same namespace where controller is running, need to determine which
 	//       namespace each cluster is working in to find the instance of elastic
-	elasticURL = fmt.Sprintf("https://elasticsearch:9200") // Internal service name of cluster
+	elasticURL = fmt.Sprintf("https://elasticsearch:9200/") // Internal service name of cluster
 )
 
 // Scheduler stores info about how to snapshot the cluster
@@ -83,6 +83,7 @@ func (s *Scheduler) CreateSnapshotRepository() {
 	client := &http.Client{Transport: tr}
 	body := fmt.Sprintf("{ \"type\": \"s3\", \"settings\": { \"bucket\": \"%s\" } }", s.s3bucketName)
 	url := fmt.Sprintf("%s_snapshot/%s", elasticURL, s.s3bucketName)
+	logrus.Info("!!! URL is: %s !!!", url)
 	req, err := http.NewRequest("PUT", url, strings.NewReader(body))
 	resp, err := client.Do(req)
 
