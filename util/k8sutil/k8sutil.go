@@ -34,7 +34,7 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	myspec "github.com/upmc-enterprises/elasticsearch-operator/pkg/spec"
+	myspec "github.com/namely/elasticsearch-operator/pkg/spec"
 	"k8s.io/client-go/kubernetes"
 	appsType "k8s.io/client-go/kubernetes/typed/apps/v1beta1"
 	coreType "k8s.io/client-go/kubernetes/typed/core/v1"
