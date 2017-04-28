@@ -28,7 +28,8 @@ import (
 	"sync"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/upmc-enterprises/elasticsearch-operator/pkg/snapshot"
+	// "github.com/upmc-enterprises/elasticsearch-operator/pkg/snapshot"
+	"github.com/namely/elasticsearch-operator/pkg/snapshot"
 	myspec "github.com/upmc-enterprises/elasticsearch-operator/pkg/spec"
 	"github.com/upmc-enterprises/elasticsearch-operator/util/k8sutil"
 )
