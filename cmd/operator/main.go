@@ -33,8 +33,6 @@ import (
 	"syscall"
 
 	"github.com/Sirupsen/logrus"
-	// "github.com/upmc-enterprises/elasticsearch-operator/pkg/controller"
-	// "github.com/upmc-enterprises/elasticsearch-operator/pkg/processor"
 	"github.com/upmc-enterprises/elasticsearch-operator/util/k8sutil"
 	"github.com/namely/elasticsearch-operator/pkg/controller"
 	"github.com/namely/elasticsearch-operator/pkg/processor"

@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: operator
-        image: registry.namely.run/namely/elasticsearchoperator:0.3
+        image: registry.namely.run/namely/elasticsearch-operator:0.0.5
         imagePullPolicy: Always
         env:
         - name: NAMESPACE

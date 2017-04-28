@@ -3,8 +3,8 @@
 
 .PHONY: all build container push clean test
 
-TAG ?= 0.0.2-beta
-PREFIX ?= upmcenterprises
+TAG ?= 0.0.5
+PREFIX ?= registry.namely.run/namely
 
 all: container
 
